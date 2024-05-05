@@ -60,7 +60,8 @@ class TransactionController extends Controller
 
     public function transactions()
     {
-        $transactions = Transactions::latest()->get();
+        $user = Auth::user();
+        $transactions = Transactions::where('user_id', $user->id)->latest()->get();
 
         return response()->json(['transactions' => $transactions]);
     }

@@ -45,7 +45,7 @@ export default function Dashboard({ auth }) {
 
     const fetchAllTransactions = async () => {
         try {
-            const alltrans = await axios.get("/transactions");
+            const alltrans = await axios.get("/transactions",);
 
             setTransactions(alltrans?.data?.transactions);
         } catch (error) {
